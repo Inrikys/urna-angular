@@ -1,15 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ElectionService } from '../../services/election-service.service';
+
 
 @Component({
   selector: 'app-candidates',
   templateUrl: './candidates.component.html',
   styleUrls: ['./candidates.component.scss']
 })
-export class CandidatesComponent implements OnInit {
+export class CandidatesComponent {
 
-  constructor() { }
+  constructor(
+    private electionService: ElectionService,
+  ) { 
+    this.initialize();
+  }
 
-  ngOnInit() {
+  public elections: any;
+
+  async initialize() {
+    await this.getElections();
+    console.log(this.elections);
+  }
+
+  async getElections(){
+    this.elections = await this.electionService.getElections();
   }
 
 }
