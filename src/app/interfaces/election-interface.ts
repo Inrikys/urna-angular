@@ -1,4 +1,5 @@
 export interface Election {
+    _id: string;
     name: string;
     party: string;
     number: number;

@@ -1,1 +1,13 @@
-<p>card works!</p>
+<div class="d-flex justify-content align-items-center">
+    <div *ngFor="let election of elections">
+        <div class="card m-3" style="width: 18rem;">
+            <img class="card-img-top election-image" src="{{election.image}}" alt="Card image cap">
+            <div class="card-body overflow-auto">
+                <p><span class="font-weight-bold">Nome: </span><span>{{election.name}}</span></p>
+                <p><span class="font-weight-bold">Partido: </span><span>{{election.party}}</span></p>
+                <p><span class="font-weight-bold">Número: </span><span>{{election.number}}</span></p>
+                <p class="card-text">{{election.comment}}</p>
+            </div>
+        </div>
+    </div>
+</div>

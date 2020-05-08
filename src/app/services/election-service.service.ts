@@ -10,9 +10,16 @@ export class ElectionService {
   
   url_base = 'http://localhost:3000/'
 
-  async getElections<Promise>(){
+  async getElections(){
     const url = this.url_base + 'urna/election'; 
     return this.http.get(url).toPromise();
+  }
+
+  async getElectionByNumber(number){
+    const url = this.url_base + 'urna/election/number/' + number; 
+    return this.http.get(url).toPromise().catch( error => {
+      console.log(error);
+    });
   }
 
 }

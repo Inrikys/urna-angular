@@ -1,0 +1,41 @@
+<div *ngIf="loadingCandidate == 1; then spinnerBlock; else noSpinnerBlock"></div>
+
+<ng-template #spinnerBlock>
+    <div class='text-center'>
+        <div class="card m-auto d-flex justify-content-center align-items-center p-5" style="width: 18rem;">
+            <div class="spinner-border text-center" role="status">
+                <span class="sr-only">Carregando...</span>
+            </div>
+        </div>
+    </div>
+</ng-template>
+<ng-template #noSpinnerBlock>
+    <div *ngIf="election; then candidateBlock; else noCandidateBlock"></div>
+    <ng-template #candidateBlock>
+        <div class='text-center'>
+            <div class="card m-auto" style="width: 18rem;">
+                <div>
+                    <div class="rounded-circle">
+                        <img class="w-100 rounded-top" src='{{election.image}}'>
+                    </div>
+                    <div class="pt-2 candidate-infos">
+                        <p>{{election.name}}</p>
+                        <p>{{election.party}}</p>
+                        <p>{{election.comment}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template #noCandidateBlock>
+        <div class='text-center'>
+            <div class="card m-auto" style="width: 18rem;">
+                <div>
+                    <div class="no-candidate p-5">
+                        Insira o número do candidato e clique confirma
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</ng-template>
