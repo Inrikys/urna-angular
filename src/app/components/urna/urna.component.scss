@@ -1,6 +1,7 @@
 .urna-box{
-    border: solid 1px black;
+    border: 6px solid #CAB4D9;
     width: 400px;
+    background: #E4CEF2;
 }
 
 .urna-container{
@@ -11,12 +12,38 @@
 
 .urna-buttons{
     .col{
-        border: 1px solid black;
-        padding: 1rem;
+        background: #C2EDF2;
+        border: 6px solid #CAB4D9;
+        padding: 0.5rem;
         margin: 1rem;
         border-radius: 8px;
     }
     .final-buttons{
         font-size: 12px;
+    }
+    .number-button{
+        color: #CAB4D9;
+        font-weight: 700;
+    }
+
+    .btn-branco{
+        color: darkgray;
+        font-weight: 700;
+        font-size: 18px;
+        background: white;
+    }
+
+    .btn-corrige{
+        color: #F2C4D5;
+        font-weight: 700;
+        font-size: 18px;
+        background: white;
+    }
+
+    .btn-confirma{
+        color: #0B2615;
+        font-weight: 700;
+        font-size: 18px;
+        background: white;
     }
 }
